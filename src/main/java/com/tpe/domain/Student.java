@@ -37,7 +37,7 @@ public class Student { // student
 
     @Column(nullable = false, length = 50, unique = true)
     @Email(message = "Provide valid email")
-    private String email; //dfsfsfsfd   zxczxz@dfsfsd.com
+    private String email; //dfsfsfsfd   zxczxz@dfsfsd.com   /// email : dagjgajdga
 
     private String phoneNumber;
 
