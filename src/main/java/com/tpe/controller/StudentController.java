@@ -4,6 +4,10 @@ import com.tpe.domain.Student;
 import com.tpe.dto.StudentDTO;
 import com.tpe.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -105,7 +109,37 @@ public class StudentController {
         String message = "Student is updated successfully";
         return new ResponseEntity<>(message, HttpStatus.OK); // 200
     }
+    // Not: Pageable ****************************************************************************
+    @GetMapping("/page") // http://localhost:8081/students/page?page=0&size=2&sort=name&direction=ASC
+    public ResponseEntity<Page<Student>> getAllWithPage(
+            @RequestParam("page") int page, // kacinci sayfa gelecek
+            @RequestParam("size") int size, // page basi kac nesne
+            @RequestParam("sort") String prop, // siralamada kullanilacak degisken
+            @RequestParam("direction") Sort.Direction direction // siralama yonu
+            ){
 
+        Pageable pageable = PageRequest.of(page,size, Sort.by(direction, prop));
+        Page<Student> studentPage = studentService.getAllWithPage(pageable);
+        return ResponseEntity.ok(studentPage);
+    }
+    //Not: Get By LastName ***********************************************************************
+    @GetMapping("/querylastname") // http://localhost:8081/students/querylastname?lastName=Fatma  + GET
+    public ResponseEntity<List<Student>> getStudentByLastName(@RequestParam("lastName") String lastName){
+         List<Student> list = studentService.findStudent(lastName);
+         return ResponseEntity.ok(list);
+    }
+    // NOT : Get ALL Student By Grade ( JPQL ) Java Persistance Query Language *******************
+    @GetMapping("/query/{grade}") // http://localhost:8081/students/query/70  + GET
+    public ResponseEntity<List<Student>> getStudentEqualsGrade(@PathVariable("grade") Integer grade) {
+        List<Student> list = studentService.findAllEqualsGrade(grade);
+        return ResponseEntity.ok(list);
+    }
+    // Not: DB den direk DTO cekmeye calisalim ****************************************************
+    @GetMapping("/query/dto") // http://localhost:8081/students/query/dto?id=1  + GET
+    public ResponseEntity<StudentDTO> getStudentDtoById(@RequestParam("id") Long id){
+        StudentDTO studentDTO = studentService.findStudentDTOById(id);
+        return ResponseEntity.ok(studentDTO);
+    }
 }
 
 
