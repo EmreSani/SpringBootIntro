@@ -3,6 +3,8 @@ package com.tpe.controller;
 import com.tpe.domain.Student;
 import com.tpe.dto.StudentDTO;
 import com.tpe.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -42,6 +45,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/students") // http://localhost:8080/students + GET + POST + PUT +DELETE
 public class StudentController {
+
+    Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     @Autowired
     private StudentService studentService;
@@ -128,7 +133,7 @@ public class StudentController {
          List<Student> list = studentService.findStudent(lastName);
          return ResponseEntity.ok(list);
     }
-    // NOT : Get ALL Student By Grade ( JPQL ) Java Persistance Query Language *******************
+    // Not : Get ALL Student By Grade ( JPQL ) Java Persistance Query Language *******************
     @GetMapping("/query/{grade}") // http://localhost:8081/students/query/70  + GET
     public ResponseEntity<List<Student>> getStudentEqualsGrade(@PathVariable("grade") Integer grade) {
         List<Student> list = studentService.findAllEqualsGrade(grade);
@@ -139,6 +144,12 @@ public class StudentController {
     public ResponseEntity<StudentDTO> getStudentDtoById(@RequestParam("id") Long id){
         StudentDTO studentDTO = studentService.findStudentDTOById(id);
         return ResponseEntity.ok(studentDTO);
+    }
+
+    @GetMapping("/welcome") // http://localhost:8081/students/welcome + GET
+    public String welcome(HttpServletRequest request){
+        logger.warn("---------------------------- Welcome {}", request.getServletPath());
+        return "Welcome To Student Controller";
     }
 }
 
