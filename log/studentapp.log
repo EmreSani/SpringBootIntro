@@ -81,3 +81,38 @@ Using generated security password: ab970016-4ace-42d4-a71b-fd1d54df181f
 2024-05-09 21:14:00,511 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8088 (http) with context path ''
 2024-05-09 21:14:00,548 INFO  [main] com.tpe.SpringbootintroApplication:Started SpringbootintroApplication in 6.632 seconds (JVM running for 7.263)
 2024-05-09 21:14:24,410 INFO  [http-nio-8088-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-09 21:20:50,739 INFO  [SpringApplicationShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 21:20:50,743 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown initiated...
+2024-05-09 21:20:50,748 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Shutdown completed.
+2024-05-09 21:20:53,951 INFO  [main] com.tpe.SpringbootintroApplication:Starting SpringbootintroApplication using Java 17.0.11 on Emre-MacBook-Pro.local with PID 31705 (/Users/emresani/IdeaProjects/springbootintro/target/classes started by emresani in /Users/emresani/IdeaProjects/springbootintro)
+2024-05-09 21:20:53,953 INFO  [main] com.tpe.SpringbootintroApplication:No active profile set, falling back to default profiles: default
+2024-05-09 21:20:55,537 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-09 21:20:55,622 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interfaces.
+2024-05-09 21:20:56,582 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8088 (http)
+2024-05-09 21:20:56,597 INFO  [main] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2024-05-09 21:20:56,597 INFO  [main] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.56]
+2024-05-09 21:20:56,687 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2024-05-09 21:20:56,688 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 2627 ms
+2024-05-09 21:20:57,052 INFO  [main] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-09 21:20:57,086 INFO  [main] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.4.Final
+2024-05-09 21:20:57,250 INFO  [main] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-09 21:20:57,339 INFO  [main] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2024-05-09 21:20:57,524 INFO  [main] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2024-05-09 21:20:57,539 INFO  [main] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-05-09 21:20:58,181 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-09 21:20:58,189 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-09 21:20:58,805 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-09 21:20:59,696 INFO  [main] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-05-09 21:20:59,711 INFO  [main] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@612531a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@13bf5fd, org.springframework.security.web.header.HeaderWriterFilter@76c85485, org.springframework.web.filter.CorsFilter@3a83cfbc, org.springframework.security.web.csrf.CsrfFilter@3182143c, org.springframework.security.web.authentication.logout.LogoutFilter@39b9dc35, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e643402, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@579ee82, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6b9fc5c7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@218e186b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32050628, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18d14de3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23d07ad3, org.springframework.security.web.session.SessionManagementFilter@4a7ac98b, org.springframework.security.web.access.ExceptionTranslationFilter@c247b02, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2af31aba]
+2024-05-09 21:20:59,822 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8088 (http) with context path ''
+2024-05-09 21:20:59,894 INFO  [main] com.tpe.SpringbootintroApplication:Started SpringbootintroApplication in 6.708 seconds (JVM running for 7.335)
+2024-05-09 21:21:24,999 INFO  [http-nio-8088-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-09 21:46:27,843 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m59s895ms).
+2024-05-09 21:51:10,542 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m42s707ms).
+2024-05-09 21:53:08,912 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m28s338ms).
+2024-05-09 21:58:38,648 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m59s733ms).
+2024-05-09 22:01:38,553 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m59s906ms).
+2024-05-09 22:13:42,558 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m33s992ms).
+2024-05-09 22:15:45,033 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m32s466ms).
+2024-05-09 22:33:37,366 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m52s188ms).
+2024-05-09 22:38:18,653 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m11s274ms).
