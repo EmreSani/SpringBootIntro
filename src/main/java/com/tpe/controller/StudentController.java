@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,6 +57,7 @@ public class StudentController {
     @GetMapping // http://localhost:8080/students  + GET
     // 1 --> Student[] olur mu ? Olmaz List<> ile calismamam gerekiyor
     // 2 --> Response icinde Status codunu rahat setlemek icin ResponseEntity ..
+    @PreAuthorize("hasRole('ADMIN')")  // ROLE_
     public ResponseEntity<List<Student>> getAll(){
 
          List<Student> students = studentService.getAll();
